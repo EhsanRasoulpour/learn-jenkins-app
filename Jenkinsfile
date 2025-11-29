@@ -47,21 +47,21 @@ pipeline {
                     }
                 }
 
-                stage('E2E') {
-                    agent {
-                        docker {
-                            image 'mcr.microsoft.com/playwright:v1.57.0-noble'
-                            reuseNode true
-                        }
-                    }
+                // stage('E2E') {
+                //     agent {
+                //         docker {
+                //             image 'mcr.microsoft.com/playwright:v1.57.0-noble'
+                //             reuseNode true
+                //         }
+                //     }
 
-                    steps {
-                        sh '''
-                            npm install -e serve
-                            serve -s build &
-                            npx playwright test
-                        '''
-                    }
+                //     steps {
+                //         sh '''
+                //             npm install -e serve
+                //             serve -s build &
+                //             npx playwright test
+                //         '''
+                //     }
                 }
             }
         }

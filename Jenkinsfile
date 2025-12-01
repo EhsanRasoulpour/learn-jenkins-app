@@ -56,9 +56,6 @@ pipeline {
                             image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
                             reuseNode true
                         }
-                        environment{
-                            NETLIFY_AUTH_TOKEN = credentials('netlify-token')
-                        }
                     }
 
                     steps {

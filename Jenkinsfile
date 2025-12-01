@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NETLIFY_SITE_ID = 'PUT YOUR NETLIFY SITE ID HERE'
+        NETLIFY_SITE_ID = '3e5668fa-76b2-4b8e-b8a6-497ba7e88ffa'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
 
@@ -55,6 +55,9 @@ pipeline {
                         docker {
                             image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
                             reuseNode true
+                        }
+                        environment{
+                            NETLIFY_AUTH_TOKEN = credentials('netlify-token')
                         }
                     }
 
